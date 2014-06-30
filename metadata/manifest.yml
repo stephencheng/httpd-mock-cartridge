@@ -1,0 +1,39 @@
+---
+Name: httpd
+Cartridge-Short-Name: HTTPD
+Display-Name: HTTPD Cartridge 0.1
+Description: A httpd cartridge for development use only.
+Version: '0.1'
+Versions:
+- '0.1'
+License: "None"
+Vendor: Stephen Cheng
+Cartridge-Version: 0.0.1
+Cartridge-Vendor: customcarts
+Categories:
+- service
+- web_framework
+Provides:
+- httpd
+Cart-Data:
+- Key: OPENSHIFT_HTTPD_EXAMPLE
+  Type: environment
+  Description: An example environment variable using ERB processing
+Publishes:
+Subscribes:
+  set-db-connection-info:
+    Type: "NET_TCP:db:connection-info"
+    Required: false
+Endpoints:
+- Private-IP-Name: IP1
+  Private-Port-Name: PORT1
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols: [http, ws]
+  Options:
+    primary: true
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: false
