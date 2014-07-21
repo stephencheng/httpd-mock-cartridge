@@ -26,8 +26,8 @@ Subscribes:
     Type: "NET_TCP:db:connection-info"
     Required: false
 Endpoints:
-- Private-IP-Name: IP1
-  Private-Port-Name: PORT1
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
   Private-Port: 8080
   Public-Port-Name: PROXY_PORT
   Protocols: [http, ws]
